@@ -26,7 +26,7 @@ export default class Count extends Component {
 		const {value} = this.refs.user_selected
 			//获取当前的和
 		const {count} = this.props
-		if(count %2 === 1){
+		if(count%2 === 1){
 			this.props.increment(value*1)
 		}
 	}
@@ -35,7 +35,9 @@ export default class Count extends Component {
 	incrementAsync = ()=>{
 		//1.获取用户的输入
 		const {value} = this.refs.user_selected
-		this.props.incrementAsync(value*1,500)
+		setTimeout(()=>{
+			this.props.increment(value*1)
+		},500)
 	}
 
 	render() {

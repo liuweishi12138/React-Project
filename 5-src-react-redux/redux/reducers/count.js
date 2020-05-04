@@ -19,5 +19,8 @@ export default function countReducer(preStat=initState,action) {
       //如果动作类型不是加也不是减，那么就是初始化的时。
     return preStat
   }
+
+
+  return newState
   
 }
