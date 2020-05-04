@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Cont from './components/count/cont'
+import Count from './containers/Count'
 
 export default class App extends Component {
   render() {
     return (
 
-        <Cont></Cont>
+        <Count/>
     
     )
   }
