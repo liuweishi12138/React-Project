@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import {increment,decrement,incrementAsync} from '../redux/actions/count'
 
 export default connect(
-	state =>({count:state.number}),//映射状态
+	state =>({
+		count:state.number,
+		personCount:state.persons.length
+	}),//映射状态
 
 
 	//原始的写法：

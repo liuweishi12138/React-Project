@@ -27,7 +27,7 @@ class Person extends Component {
   render() {
     return (
       <div>
-        <h1>当前总人数为:{this.props.person.length}</h1>
+        <h1>当前总人数为:{this.props.person.length},上方组件的求和为:{this.props.count}</h1>
         <input type="text" placeholder='输入名字' ref='nameNode'/>
         <input type="text" placeholder='输入年龄' ref='ageNode'/>
         <button onClick={this.add}>添加</button>
