@@ -4,11 +4,6 @@ import Login from './pages/Login/login'
 import {Switch,Route,Redirect} from 'react-router-dom'
 
 
-
-
-
-
-
 export default class App extends Component {
   render() {
     return (
