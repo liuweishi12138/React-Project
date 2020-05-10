@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, Input, Button,message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import {saveUserInfo} from '@/redux/actions/login';
 import logo from './images/logo.png';
 import './css/login.less';
@@ -15,7 +16,6 @@ import {reqLogin} from '@/api';
       if (status ===0) {
         message.success('登陆成功!',1)//提示
         this.props.saveUserInfo(data)//存入信息
-        this.props.history.replace('/admin')//跳转页面
 
       }else{
         message.error(msg)
@@ -32,6 +32,7 @@ import {reqLogin} from '@/api';
       else return Promise.resolve()
     }
     render() {
+      if (this.props.isLogin) return <Redirect to="/admin"/>
       return (
         <div className="login">
           <header>
@@ -91,7 +92,7 @@ import {reqLogin} from '@/api';
   }
 
  export default connect(
-    ()=>({}),//映射状态
-    {saveUserInfo}
+    state=>({isLogin:state.userInfo.isLogin}),//映射状态
+    {saveUserInfo}//映射操作状态的方法
   )(Login)
 

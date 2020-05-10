@@ -1,4 +1,5 @@
 import {SAVE_USERINFO} from '@/redux/action_types';
+import {DELETE_USERINFO} from '@/redux/action_types';
 
 //用于从localStorage中读取 user和token
 let _user 
@@ -24,8 +25,11 @@ export default function (preState=initState,action) {
   const {type,data } = action
   let newState
   switch (type) {
-    case SAVE_USERINFO:
+    case SAVE_USERINFO://如果是保存用户信息
       newState ={...data ,isLogin:true}
+      return newState
+    case DELETE_USERINFO://如果是删除用户信息
+      newState ={user:{},token:'' ,isLogin:false}
       return newState
   
     default:
