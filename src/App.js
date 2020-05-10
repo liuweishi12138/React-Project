@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Admin from './pages/Admin/admin'
-import Login from './pages/Login/login'
+import Admin from './containers/Admin/admin'
+import Login from '@/containers/Login/login'
 import {Switch,Route,Redirect} from 'react-router-dom'
 
 
