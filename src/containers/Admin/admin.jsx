@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom';
+import  Check  from '@/containers/HOC/Check'
 import { Layout } from 'antd';
 import Header from './Header/Header'
 
@@ -14,11 +14,9 @@ const { Footer, Sider, Content } = Layout;
   }),//.映射状态
   {} //映射操作状态的方法)
 )
+  @Check
  class Admin extends Component {
-
-
   render() {
-    if (!this.props.isLogin) return <Redirect to="/login"/>
     return (
       <Layout className="admin-container">
       <Sider>Sider</Sider>
