@@ -3,7 +3,7 @@ const {
   fixBabelImports, 
   addLessLoader,
   addWebpackAlias,
-  addDecoratorsLegacy
+  addDecoratorsLegacy 
 } = require('customize-cra');
 const {resolve} = require("path");
 module.exports = override(

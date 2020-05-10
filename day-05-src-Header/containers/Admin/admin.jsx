@@ -9,11 +9,6 @@ const { Footer, Sider, Content } = Layout;
 
 
 
-  @connect( state =>({
-    isLogin: state.userInfo.isLogin
-  }),//.映射状态
-  {} //映射操作状态的方法)
-)
  class Admin extends Component {
 
 
@@ -32,4 +27,9 @@ const { Footer, Sider, Content } = Layout;
   }
 }
 
-export default Admin 
+export default connect(
+  state =>({
+    isLogin: state.userInfo.isLogin
+  }),//.映射状态
+  {} //映射操作状态的方法
+)(Admin)

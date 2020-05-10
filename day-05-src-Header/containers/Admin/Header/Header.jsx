@@ -49,15 +49,13 @@ class Header extends Component {
 	}
 
   render() {
-    const {username} = this.props
-    const {isFull} = this.state
     return (
       <div className="header">
       <div className="header-top">
       <Button size="small" onClick={this.fullScreen}>
-      {isFull ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
+      {this.state.isFull ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
       </Button>
-        <span className="username">欢迎,{username}</span>
+        <span className="username">欢迎,佩奇</span>
         <Button type="link" size="small" onClick={this.logout}>退出登录</Button>
       </div>
       <div className="header-bottom">
@@ -77,6 +75,6 @@ class Header extends Component {
 }
 
 export default connect(
-  state => ({username:state.userInfo.user.username}),
+  state => ({}),
   {deleteUserInfo}
 )(Header);

@@ -8,11 +8,7 @@ import logo from './images/logo.png';
 import './css/login.less';
 import {reqLogin} from '@/api';
 
-@connect(
-  state=>({isLogin:state.userInfo.isLogin}),//映射状态
-  {saveUserInfo}//映射操作状态的方法
-)
-class Login extends Component {
+ class Login extends Component {
   //表单提交且验证通过的回调
     onFinish = async values => {
       let result = await reqLogin(values) //获取请求结果
@@ -95,5 +91,8 @@ class Login extends Component {
     }
   }
 
- export default Login
+ export default connect(
+    state=>({isLogin:state.userInfo.isLogin}),//映射状态
+    {saveUserInfo}//映射操作状态的方法
+  )(Login)
 
